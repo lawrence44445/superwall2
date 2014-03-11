@@ -25,6 +25,22 @@
           <form action="/posts/<%=post.id%>/downvote" method="post">
             <strong></strong><%post.votes %>
             <input type="submit" value="Downvote!">
+            </form>
+
+            <form action="/posts/<%=post.id%>/delete"
+              method="post">
+              <input type="submit" value = "delete">
+            </form>
+            
+            <form action="posts/<%=post.id%>/edit" method="post">
+            <textarea name= "Edit"></textarea>
+              <input type="submit" value= "Edit">
+            </form>
+
+
+
+
+
       </p>
       <!-- What does "escape" do here?  What happens if you remove it? -->
       <!-- Try creating a post that contains HTML and see how that post looks

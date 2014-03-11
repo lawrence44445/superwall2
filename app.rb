@@ -20,8 +20,7 @@ post '/posts/:id/upvote' do
 	post.votes = post.votes + 1
 	post.save
 	redirect to('/')
-end
-
+end 
 post '/posts/:id/downvote' do
 	post = Post.where(:id => params[:id]).first
 	post.votes = post.votes - 1
@@ -29,6 +28,18 @@ post '/posts/:id/downvote' do
 	redirect to('/')
 end
 
+post '/posts/:id/delete' do
+	post = Post.where(:id=>params[:id]).first
+	post.delete
+	redirect to('/')
+end
+
+post '/posts/:id/edit' do
+	post = Post.where(:id=>params[:id]).first
+	post.body = params[:Edit]
+	post.save
+	redirect to('/')
+end
 get '/todo' do
   erb :todo
 end
